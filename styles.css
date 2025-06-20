@@ -4,3 +4,44 @@ body {
 	margin: 0 auto;
 	padding: 20px;
 }
+
+.product-list,
+.cart {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.product,
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+}
+
+.product:hover,
+.cart-item:hover {
+    background-color: #f9f9f9;
+}
+
+.cart-summary {
+	font-weight: bold;
+	text-align: right;
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+
+.filter-sort {
+	margin-bottom: 15px;
+}
+
+.empty-cart {
+	color: #777;
+	text-align: center;
+	padding: 20px;
+}

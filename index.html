@@ -11,6 +11,35 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
+		<div id="app">
+			<h1>Мини-корзина товаров</h1>
+
+			<!-- Блок фильтрации и сортировки -->
+			<div class="filter-sort">
+				<input type="text" id="search" placeholder="Поиск товаров..." />
+				<select id="sort">
+					<option value="name-asc">По имени (А-Я)</option>
+					<option value="name-desc">По имени (Я-А)</option>
+					<option value="price-asc">По цене (дешевые сначала)</option>
+					<option value="price-desc">По цене (дорогие сначала)</option>
+				</select>
+			</div>
+
+			<!-- Список товаров -->
+			<div class="product-list">
+				<h2>Доступные товары</h2>
+				<div id="products"></div>
+			</div>
+
+			<!-- Корзина -->
+			<div class="cart">
+				<h2>Ваша корзина</h2>
+				<div id="cart-items"></div>
+				<div class="cart-summary">Итого: <span id="total">0</span> ₽</div>
+				<button id="clear-cart">Очистить корзину</button>
+				<button id="checkout">Оформить заказ</button>
+			</div>
+		</div>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 		<script src="script.js"></script>
