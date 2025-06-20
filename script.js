@@ -57,3 +57,33 @@ $(document).ready(function () {
           `)
       })
   }
+
+  //Блок фильтрации и сортировки - разработчик: Хажеев
+
+function filterAndSortProducts() {
+   const searchTerm = $('#search').val().toLowerCase()
+   const sortValue = $('#sort').val()
+
+   let filteredProducts = products.filter(
+       product =>
+           product.name.toLowerCase().includes(searchTerm) ||
+           product.category.toLowerCase().includes(searchTerm)
+   )
+
+   switch (sortValue) {
+       case 'name-asc':
+           filteredProducts.sort((a, b) => a.name.localeCompare(b.name))
+           break
+       case 'name-desc':
+           filteredProducts.sort((a, b) => b.name.localeCompare(a.name))
+           break
+       case 'price-asc':
+           filteredProducts.sort((a, b) => a.price - b.price)
+           break
+       case 'price-desc':
+           filteredProducts.sort((a, b) => b.price - a.price)
+           break
+   }
+
+   renderProducts(filteredProducts)
+}
